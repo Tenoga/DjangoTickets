@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block titulo %} Lista de Pasajeros {%endblock%}
+{% block contenido %} 
+
+<section>
+    <div class="bg-light w-75 m-auto py-3 pr-0 pl-3 rounded h-75">
+        <div class="col overflow-auto h-100">
+            <h2 class="center-align sticky-top bg-light">Pasajeros</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Cedula</th>
+                        <th>Telefono</th>
+                        <th>Correo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr class="table-light">
+                        <td class="" scope="row"> {{ pasajero.id }} </td>
+                        <td>{{ pasajero.nombre }} </td>
+                        <td>{{ pasajero.apellido }} </td>
+                        <td>{{ pasajero.cedula }} </td>
+                        <td>{{ pasajero.correo }} </td>
+                        <td>{{ pasajero.telefono }} </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+</section>
+
+{% endblock %}

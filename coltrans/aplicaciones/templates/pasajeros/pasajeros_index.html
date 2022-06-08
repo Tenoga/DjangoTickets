@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block titulo %} Lista de Pasajeros {%endblock%}
+{% block bootstrap %}
+<!-- CSS only bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+{%endblock%}
+{% block contenido %}
+
+<section>
+    <div class="bg-light w-75 m-auto py-3 pr-0 pl-3 rounded h-75">
+        <div class="col overflow-auto h-100">
+            <h2 class="center-align sticky-top bg-light">Pasajeros</h2>
+            <table class="table">
+                <a class="custom-btn custom-border-btn btn custom-link mt-3 me-3" href="/pasajeros_create">Crear
+                    Pasajero</a>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Cedula</th>
+                        <th>Telefono</th>
+                        <th>Correo</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pasajero in pasajeros %}
+                    <tr class="table-light">
+                        <td class="" scope="row"> {{ pasajero.id }} </td>
+                        <td>{{ pasajero.nombre }} </td>
+                        <td>{{ pasajero.apellido }} </td>
+                        <td>{{ pasajero.cedula }} </td>
+                        <td>{{ pasajero.correo }} </td>
+                        <td>{{ pasajero.telefono }} </td>
+                        <td>
+                            <a class="custom-btn custom-border-btn btn custom-link mt-3 me-3"
+                                href="pasajeros_show/{{ pasajero.id }}">Ver</a>
+                            <a class="custom-btn btn custom-link mt-3" href="pasajeros_edit/{{ pasajero.id }}"><i
+                                    class="bi bi-pencil fa-5x"></i></a>
+                            <button type="button" class="custom-btn custom-border-btn btn custom-link mt-3 me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">¿Borrar al pasajero: {{ pasajero.nombre }} {{ pasajero.apellido }} ?</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <a class="custom-btn custom-border-btn btn custom-link mt-3 me-3" href="pasajeros_delete/{{ pasajero.id }}">Borrar</a>
+                                    <a class="custom-btn btn custom-link mt-3" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-dismiss="modal">
+                                        Cancelar
+                                    </a>       
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
