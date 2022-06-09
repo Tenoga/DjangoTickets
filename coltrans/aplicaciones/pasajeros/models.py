@@ -7,3 +7,7 @@ class Pasajero (models.Model):
     cedula = models.CharField( max_length= 80, unique = True)
     correo = models.EmailField( max_length= 120, unique = True)
     telefono = models.CharField( max_length= 80)
+
+    def __str__(self):
+        data = f"{self.nombre} {self.apellido}"
+        return data

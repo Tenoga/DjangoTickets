@@ -6,3 +6,7 @@ class Bus(models.Model):
     placa = models.CharField( max_length = 10 )
     capacidad = models.SmallIntegerField()
     compañia = models.CharField( max_length = 255 )
+
+    def __str__(self):
+        data = f"{self.tipo} {self.compañia}"
+        return data
