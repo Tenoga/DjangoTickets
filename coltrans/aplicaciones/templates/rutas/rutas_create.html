@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% block titulo %} Crear Pasajero {%endblock%}
+{% block titulo %} Crear Ruta {%endblock%}
 {% block contenido %} 
     <section class="contact section-padding" id="section_7">
         <div class="container">
@@ -14,18 +14,10 @@
                         <div class="row">
                             {{form.errors}}
                             <div class="col-lg-12 col-md-12 col-12">                                    
-                                <input type="text" name="tipo" id="tipo" class="form-control" placeholder="Tipo" value="{{tipo}}" required>
+                                <input type="text" name="origen" id="origen" class="form-control" placeholder="Origen" value="{{origen}}" required>
                             </div>
                             <div class="col-lg-12 col-md-12 col-12">                                    
-                                <input type="text" name="placa" id="placa" class="form-control" placeholder="Placa" value="{{placa}}" required>
-                            </div>
-
-                            <div class="col-lg-12 col-md-12 col-12">         
-                                <input type="text" name="capacidad" id="capacidad" class="form-control" placeholder="Capacidad (pasajeros)" value="{{capacidad}}" required>
-                            </div>
-                            
-                            <div class="col-lg-6 col-md-6 col-12">                                    
-                                <input type="text" name="compañia" id="compañia" class="form-control" placeholder="Compañia" value="{{compañia}}" required>
+                                <input type="text" name="destino" id="destino" class="form-control" placeholder="Destino" value="{{destino}}" required>
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="form-control">{{boton}}</button>

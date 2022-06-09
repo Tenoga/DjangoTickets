@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% block titulo %} Lista de Buses {%endblock%}
+{% block titulo %} Lista de Rutas {%endblock%}
 {% block bootstrap %}
 <!-- CSS only bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -10,30 +10,26 @@
 <section>
     <div class="bg-light w-75 m-auto py-3 pr-0 pl-3 rounded h-75">
         <div class="col overflow-auto h-100">
-            <h2 class="center-align sticky-top bg-light">Buses</h2>
+            <h2 class="center-align sticky-top bg-light">Rutas</h2>
             <table class="table">
-                <a class="custom-btn custom-border-btn btn custom-link mt-3 me-3" href="/buses_create">Crear Bus</a>
+                <a class="custom-btn custom-border-btn btn custom-link mt-3 me-3" href="/rutas_create">Crear Ruta</a>
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Tipo</th>
-                        <th>Placa</th>
-                        <th>Capacidad</th>
-                        <th>Compañia</th>
+                        <th>Origen</th>
+                        <th>Destino</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for bus in buses %}
+                    {% for ruta in rutas %}
                     <tr class="table-light">
-                        <td class="" scope="row"> {{ bus.id }} </td>
-                        <td>{{ bus.tipo }} </td>
-                        <td>{{ bus.placa }} </td>
-                        <td>{{ bus.capacidad }} </td>
-                        <td>{{ bus.compañia }} </td>
+                        <td class="" scope="row"> {{ ruta.id }} </td>
+                        <td>{{ ruta.origen }} </td>
+                        <td>{{ ruta.destino }} </td>
                         <td>
                             <a class="custom-btn custom-border-btn btn custom-link mt-3 me-3"
-                                href="buses_show/{{ bus.id }}">Ver</a>
-                            <a class="custom-btn btn custom-link mt-3" href="buses_edit/{{ bus.id }}"><i
+                                href="rutas_show/{{ ruta.id }}">Ver</a>
+                            <a class="custom-btn btn custom-link mt-3" href="rutas_edit/{{ ruta.id }}"><i
                                     class="bi bi-pencil fa-5x"></i></a>
                             <button type="button" class="custom-btn custom-border-btn btn custom-link mt-3 me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 <i class="bi bi-trash"></i>
@@ -46,12 +42,12 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">¿Borrar al bus: {{ bus.placa }} ?</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">¿Borrar la ruta: {{ ruta.origen }}  - {{ ruta.destino }}?</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <a class="custom-btn custom-border-btn btn custom-link mt-3 me-3" href="buses_delete/{{ bus.id }}">Borrar</a>
+                                    <a class="custom-btn custom-border-btn btn custom-link mt-3 me-3" href="rutas_delete/{{ ruta.id }}">Borrar</a>
                                     <a class="custom-btn btn custom-link mt-3" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-dismiss="modal">
                                         Cancelar
                                     </a>       
