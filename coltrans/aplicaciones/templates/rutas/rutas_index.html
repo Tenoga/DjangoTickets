@@ -8,7 +8,7 @@
 {% block contenido %}
 
 <section>
-    <div class="bg-light w-75 m-auto py-3 pr-0 pl-3 rounded h-75">
+    <div class="bg-light w-50 m-auto py-3 pr-0 pl-3 rounded h-75">
         <div class="col overflow-auto h-100">
             <h2 class="center-align sticky-top bg-light">Rutas</h2>
             <table class="table">
@@ -27,8 +27,8 @@
                         <td>{{ ruta.origen }} </td>
                         <td>{{ ruta.destino }} </td>
                         <td>
-                            <a class="custom-btn custom-border-btn btn custom-link mt-3 me-3"
-                                href="rutas_show/{{ ruta.id }}">Ver</a>
+                            {% comment %} <a class="custom-btn custom-border-btn btn custom-link mt-3 me-3"
+                                href="rutas_show/{{ ruta.id }}">Ver</a> {% endcomment %}
                             <a class="custom-btn btn custom-link mt-3" href="rutas_edit/{{ ruta.id }}"><i
                                     class="bi bi-pencil fa-5x"></i></a>
                             <button type="button" class="custom-btn custom-border-btn btn custom-link mt-3 me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">

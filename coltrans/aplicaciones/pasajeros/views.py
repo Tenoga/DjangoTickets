@@ -72,5 +72,5 @@ def pasajeros_delete(request, cod):
 
 # ----------Pasajeros Show-----------#
 def pasajeros_show(request, cod):
-    pasajero = Pasajero.objects.all()
-    return render(request, "pasajeros/pasajeros_show.html", {'pasajeros':pasajero})
+    pasajero = Pasajero.objects.get(id = cod)
+    return render(request, "pasajeros/pasajeros_show.html", {'pasajero':pasajero})
